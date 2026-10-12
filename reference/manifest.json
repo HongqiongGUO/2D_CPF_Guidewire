@@ -1,0 +1,36 @@
+{
+  "pyelastica_commit": "09d8e0ed4ae5658c9c4824b7a9a0e937d91bcd6d",
+  "model_source_sha256": "ecc926ddc9bb68611b197e5f3fe0cd16c934b540a4145b4abe9a26e4f867148f",
+  "fixtures": {
+    "free_trajectory.npz": {
+      "sha256": "1bf081fddfe8ab36d82764b1d0ab39dadd33b067a19950300ef5e30bfe8ee0bd",
+      "source_archive_sha256": "ee6f8f1a43935a2694b3eb1710226b5e159267de576f0d339f742ac8e7073f64",
+      "purpose": "Actual endpoint samples over the first 0.2 model time units at dt=5e-5, penalty=800."
+    },
+    "single_bend_trajectory.npz": {
+      "sha256": "9ba08e730aa8adf2d922e8443a65b7c6508abf5c4df5740dd982625ea82f851a",
+      "source_archive_sha256": "c87abf5e3919568920afa54e113029d198816c5bdffba314b6e90200bcff312b",
+      "purpose": "Actual endpoint samples over the first 0.2 model time units at dt=5e-5, penalty=800."
+    },
+    "s_bend_trajectory.npz": {
+      "sha256": "77ce63e948acd0e4aace2822f5b63fd971e3fcd890fe2e4b3df0bf01bb231d48",
+      "source_archive_sha256": "fbbb3ed96faef3db9889ec10f8da4be7a9a5314dc3f1562caa985c1ade16ee8c",
+      "purpose": "Actual endpoint samples over the first 0.2 model time units at dt=5e-5, penalty=800."
+    },
+    "insertion_trajectory.npz": {
+      "sha256": "4d7b8364c724853af859e5d3c31f88c6c7f1f0fc49ad990b3b243cdb39419667",
+      "source_archive_sha256": "fcdbf0e826b2dfb2917db581971d0e4a57ddeb1375818e6a0a3add775787ec99",
+      "purpose": "Actual endpoint samples over the first 0.2 model time units at dt=5e-5, penalty=800."
+    },
+    "single_bend_contact.npz": {
+      "sha256": "8a438b5badd1669031ea9d905ca91888388a0574e5e53685ce272437e7417c09",
+      "source_archive_sha256": "f22f565f1b3c283cf41b1d0baf050b8b9624620cfbce978b7e0dd97d56c6b531",
+      "purpose": "Contacted equilibrium shapes evaluated with the independently preserved penalty force kernel."
+    },
+    "s_bend_contact.npz": {
+      "sha256": "349248f7ba19b84046642fee482468e451b1dbd1a891cd0e8a0fa2a4768bebe6",
+      "source_archive_sha256": "fc0386bbf68c035c338d23f00036f6629c24fc626c14751228de0abb5fd87284",
+      "purpose": "Contacted equilibrium shapes evaluated with the independently preserved penalty force kernel."
+    }
+  }
+}

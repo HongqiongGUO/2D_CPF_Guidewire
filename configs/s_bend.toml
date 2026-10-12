@@ -1,0 +1,9 @@
+[scenario]
+case = "s_bend"
+duration = 100.0
+sample_interval = 0.1
+
+[parameters]
+n = 64
+dt = 0.00005
+penalty_per_length = 800.0

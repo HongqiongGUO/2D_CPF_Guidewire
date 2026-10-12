@@ -1,0 +1,97 @@
+{
+  "scenario_provenance": "Recorded complete reference runs. Regression tests compare short trajectories and contacted force states; full contact trajectories are regenerated on demand.",
+  "pyelastica_commit": "09d8e0ed4ae5658c9c4824b7a9a0e937d91bcd6d",
+  "scenario_baselines": {
+    "free": {
+      "dt": 5e-05,
+      "penalty": 800.0,
+      "maximum_penetration": 0.0,
+      "peak_node_speed": 0.000188104560885322,
+      "final_node_speed": 7.53428491108701e-10,
+      "final_force_residual": 4.457328522747679e-12,
+      "final_torque_residual": 0.0,
+      "final_mechanical_energy": 1.9736028343114406e-22
+    },
+    "single_bend": {
+      "dt": 5e-05,
+      "penalty": 800.0,
+      "maximum_penetration": 0.00029771870307569726,
+      "peak_node_speed": 0.07320138988724498,
+      "final_node_speed": 7.053630440015927e-11,
+      "final_force_residual": 4.822544429354523e-12,
+      "final_torque_residual": 4.727543665021344e-16,
+      "final_mechanical_energy": 1.2871303636388046e-06
+    },
+    "s_bend": {
+      "dt": 5e-05,
+      "penalty": 800.0,
+      "maximum_penetration": 0.001439695657338154,
+      "peak_node_speed": 1.1651266360929924,
+      "final_node_speed": 8.488779873374066e-11,
+      "final_force_residual": 5.3485390163433e-12,
+      "final_torque_residual": 1.3541549609048008e-15,
+      "final_mechanical_energy": 1.4395676436744709e-05
+    },
+    "insertion": {
+      "dt": 5e-05,
+      "penalty": 800.0,
+      "maximum_penetration": 0.001019858681126487,
+      "peak_node_speed": 0.30243756416777395,
+      "final_node_speed": 6.618899553449471e-10,
+      "final_force_residual": 6.700928926797463e-12,
+      "final_torque_residual": 1.422010135056072e-15,
+      "final_mechanical_energy": 1.3097245330685685e-05,
+      "distal_perturbation_displacement": [
+        0.00480860941229222,
+        0.00050297450810027
+      ],
+      "contact_zones_before_perturbation": 3,
+      "contact_zones_after_perturbation": 3
+    }
+  },
+  "combined_transient_certified": false,
+  "canonical_validation": {
+    "components": {
+      "rod_dynamics": true,
+      "normal_contact": true,
+      "vessel_geometry": true,
+      "fixed_entry_feeder": true
+    },
+    "all_canonical_pass": true,
+    "rod_timestep_frequency_difference_relative": 2.2408963573639085e-11,
+    "rod_mesh_frequency_difference_relative": 0.007844659637318951,
+    "impact_energy_error_reduction": 3.9992238160013818,
+    "combined_transient_certified": false,
+    "limitation": "Component checks do not certify timestep convergence of coupled insertion transients."
+  },
+  "canonical_provenance": "Recomputed using the standalone package and locked dependencies.",
+  "canonical_metrics": {
+    "beam_n64_dt5e-05": {
+      "frequency": 0.05678585928663662,
+      "reference_error_relative": 0.015742732593232667
+    },
+    "beam_n128_dt5e-05": {
+      "frequency": 0.05634386087541653,
+      "reference_error_relative": 0.007836597515688437
+    },
+    "impact_dt5e-05": {
+      "maximum_penetration": 0.00012529272020155718,
+      "maximum_energy_error_relative": 0.00039779999564926204
+    },
+    "impact_dt2.5e-05": {
+      "maximum_penetration": 0.00012532358091030954,
+      "maximum_energy_error_relative": 9.946930053217222e-05
+    },
+    "geometry": {
+      "maximum_clearance_error": 2.7755575615628914e-17,
+      "maximum_normal_error": 8.653332273857488e-11,
+      "false_contacts": 0
+    },
+    "feeder": {
+      "entry_material_passage": 0.00499999999995665,
+      "distal_material_passage": 0.004999999999899196,
+      "final_speed": 4.7808689486519693e-11,
+      "maximum_axial_strain": 4.435276774739094e-07
+    }
+  }
+}

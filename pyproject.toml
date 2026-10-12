@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cpf2d"
+version = "0.1.0"
+description = "Planar Cosserat guidewire mechanics with frictionless lumen contact"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+authors = [{name = "HongqiongGUO"}]
+dependencies = [
+  "pyelastica @ git+https://github.com/GazzolaLab/PyElastica.git@09d8e0ed4ae5658c9c4824b7a9a0e937d91bcd6d",
+  "numpy==2.2.6",
+  "numba==0.61.2",
+  "llvmlite==0.44.0",
+  "scipy==1.16.1",
+  "matplotlib==3.10.5",
+  "pillow==12.3.0",
+]
+
+[project.optional-dependencies]
+video = ["imageio-ffmpeg==0.6.0"]
+
+[dependency-groups]
+dev = ["pytest==9.0.3", "black>=26,<27"]
+
+[project.scripts]
+cpf2d = "cpf2d.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/HongqiongGUO/2D_CPF_Guidewire"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cpf2d"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -p no:cacheprovider"
+
+[tool.black]
+target-version = ["py312"]
+line-length = 100

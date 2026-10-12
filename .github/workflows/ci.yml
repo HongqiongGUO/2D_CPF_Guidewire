@@ -1,0 +1,52 @@
+name: Reproducibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      MPLBACKEND: Agg
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.12.21"
+      - run: uv sync --locked
+      - run: uv run --frozen black --check src tests
+      - run: uv run --frozen pytest
+      - run: uv run --frozen cpf2d validate --suite quick --output outputs/quick_checks
+      - run: uv run --frozen cpf2d run --case free --duration 0.2 --output outputs/smoke
+      - run: uv run --frozen cpf2d render outputs/smoke
+  canonical:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MPLBACKEND: Agg
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.12.21"
+      - run: uv sync --locked
+      - run: uv run --frozen cpf2d validate --suite all --output outputs/validation
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: canonical-validation
+          path: outputs/validation

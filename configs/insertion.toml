@@ -1,0 +1,16 @@
+[scenario]
+case = "insertion"
+sample_interval = 0.2
+base_x = -1.15
+displacement = 0.95
+ramp_time = 120.0
+perturbation = 0.005
+perturbation_time = 10.0
+minimum_settle = 20.0
+maximum_settle = 180.0
+
+[parameters]
+n = 80
+length = 1.2
+dt = 0.00005
+penalty_per_length = 800.0
